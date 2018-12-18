@@ -88,7 +88,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Quick Time Event Battle | H | 5hrs| 0hrs | 0hrs |
 | Landing Page | M | 3hrs| 0hrs | 0hrs |
 | Post MVP | L | 20hrs| 0hrs | 0hrs |
-| Total | H | 38hrs| 5hrs | 0hrs |
+| Total | H | 38hrs| 0hrs | 0hrs |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
