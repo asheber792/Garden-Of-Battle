@@ -48,10 +48,10 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - enable game over on failed key press 
 - win game when no enemies left 
 - ask to play again
+- landing page
 
 
 #### PostMVP
-- landing page
 - add health to player character and backmovement to previous grid squae upon health loss (failed key press)
 - enable enemy AI 
 - add boss 
