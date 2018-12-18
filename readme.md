@@ -44,7 +44,7 @@ This assignment, as outlined below, must be complete in totality by:
 
 - Name of your project
 - A link to your deployed game
-- The guidelines outlined in this [project worksheet](https://gist.git.generalassemb.ly/rachelmoskowitz/f168f8a6d51ace56b84315e81933685c).
+- The guidelines outlined in this [project worksheet](https://gist.git.generalassemb.ly/asheber792/ae71ae7e84f144069b8a4127dd7a02a6).
 
 
 ## Necessary Deliverables
