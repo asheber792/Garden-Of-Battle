@@ -25,8 +25,10 @@ Project will be a grid based figher game where the player can move his character
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
-https://res.cloudinary.com/dj10zwlqs/image/upload/v1545143807/p1_wireframe.jpg
-https://res.cloudinary.com/dj10zwlqs/image/upload/v1545143807/p1_wireframe_2.jpg
+https://res.cloudinary.com/dj10zwlqs/image/upload/v1545151370/p1_wireframe_1.jpg
+https://res.cloudinary.com/dj10zwlqs/image/upload/v1545151370/p1_wireframe_2.jpg
+https://res.cloudinary.com/dj10zwlqs/image/upload/v1545151370/p1_wireframe_3.jpg
+https://res.cloudinary.com/dj10zwlqs/image/upload/v1545151370/p1_wireframe_4.jpg
 
 ## Priority Matrix
 
@@ -48,10 +50,10 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - enable game over on failed key press 
 - win game when no enemies left 
 - ask to play again
-- landing page
 
 
 #### PostMVP
+- landing page
 - add health to player character and backmovement to previous grid squae upon health loss (failed key press)
 - enable enemy AI 
 - add boss 
@@ -65,8 +67,6 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 ### Landing Page
 Displays title, has 'start game' button, and displays controls for the game 
-
-similar to: https://i.ytimg.com/vi/7OAp1ozayuU/maxresdefault.jpg
 
 ### Game Initialization
 The player's character and enemies are rendered on the game board and. Player movement with the arrow keys is enabled.
@@ -86,11 +86,14 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  :---: | :---: | :---: |
 | Board Visuals | H | 2hrs| 0hrs | 0hrs |
 | Rendering Characters | H | 2hrs| 0hrs | 0hrs |
-| Player Character Movement | H | 5hrs| 0hrs | 0hrs |
-| Quick Time Event Battle | H | 5hrs| 0hrs | 0hrs |
 | Landing Page | M | 3hrs| 0hrs | 0hrs |
+| Player Character Movement | H | 5hrs| 0hrs | 0hrs |
+| Battle Mode Layout | M | 3hrs| 0hrs | 0hrs |
+| Battle Functionality (key presses, timer) | H | 5hrs| 0hrs | 0hrs |
+| Normal state return after enemy defeat | H | 4hrs| 0hrs | 0hrs |
+| Win/Lose Logic | H | 3hrs| 0hrs | 0hrs |
 | Post MVP | L | 20hrs| 0hrs | 0hrs |
-| Total | H | 38hrs| 0hrs | 0hrs |
+| Total | H | 47hrs| 5hrs | 0hrs |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
