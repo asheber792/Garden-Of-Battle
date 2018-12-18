@@ -65,6 +65,7 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 ### Landing Page
 Displays title, has 'start game' button, and displays controls for the game 
+similar to: https://i.ytimg.com/vi/7OAp1ozayuU/maxresdefault.jpg
 
 ### Game Initialization
 The player's character and enemies are rendered on the game board and. Player movement with the arrow keys is enabled.
