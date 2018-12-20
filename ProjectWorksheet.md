@@ -54,7 +54,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### PostMVP
 - landing page
-- add health to player character and backmovement to previous grid squae upon health loss (failed key press)
+- add health to player character and backmovement to previous grid square upon health loss (failed key press)
 - enable enemy AI 
 - add boss 
 - cutscenes/image frames on quick time event 
