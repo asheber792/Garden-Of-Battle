@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+@font-face{
+	font-family: Goud;
+	src: url('../fonts/goud.ttf');
+}
+@font-face{
+	font-family: Goud-Ornate;
+	src: url('../fonts/goud-ornate.ttf');
+}
+
+body{
+	background: black;
+}
+
+.game-title{
+	text-align: center;
+	margin: 10px;
+	font-family: Goud-Ornate;
+	font-size: 34pt;
+	color: white;
+	text-shadow: 2px 2px 5px lightgrey;
+}
+.mode-title{
+	text-align: center; 
+	margin: 5px;
+	font-family: Goud;
+	font-size: 24pt;
+	color: white;
+	text-shadow: 2px 2px 5px lightgrey;
+}
+.game-board{
+	width: 800px;
+	height: 500px;
+	margin: 2% auto;
+	position: relative;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	box-shadow: 10px 15px 10px #6d584a;
+}
