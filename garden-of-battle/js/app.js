@@ -52,7 +52,8 @@ const renderPlayerCharacter = () => {
 	let characterPos = convertToPix(character);
 	characterDiv.style.left = characterPos[0]; 
 	characterDiv.style.top = characterPos[1];
-	gameBoard.append(characterDiv);
+	character.$el = characterDiv;
+	gameBoard.append(character.$el);
 }
 
 const renderEnemies  = () => { 
@@ -67,7 +68,8 @@ const renderEnemies  = () => {
 		let enemyPos = convertToPix(enemy); 
 		enemyDiv.style.left = enemyPos[0];
 		enemyDiv.style.top = enemyPos[1];
-		gameBoard.append(enemyDiv);
+		enemy.$el = enemyDiv; 
+		gameBoard.append(enemy.$el);
 	}
 }
 
@@ -78,67 +80,110 @@ const isPosInGrid = (posX, posY) => {
 	return true;
 }
 
+const getIndexOfEnemyAt = (posX, posY) => {
+	return enemies.findIndex(enemy => enemy.posX == posX && enemy.posY == posX)
+}
+
 const enemyEncounter = (posX, posY) => {
-	for(const enemy of enemies){
-		if(enemy.posX == posX && enemy.posY == posY){
-			return true; 
+	for(let i = 0; i < enemies.length; i++){
+		if(enemies[i].posX == posX && enemies[i].posY == posY){
+			enemies[i].posX = 4;
+			enemies[i].posY = 2;
+			let enemyBattlePos = convertToPix(enemies[i]);
+			enemies[i].$el.style.left = enemyBattlePos[0];
+			enemies[i].$el.style.top = enemyBattlePos[1];
+
+			let otherEnemies = enemies.filter(enemy => enemy != enemies[i]); 
+			
+			for(const enemy of otherEnemies){
+				enemy.$el.style.display = 'none';
+			}
+
+			return true;
 		}
+
 	}
 	return false; 
 }
 
+const battleMode = () => {
+	if(enemyEncounter(character.posX, character.posY)){
+		const mode_title = document.querySelector('.mode-title');
+		mode_title.textContent = "Battle Mode";
+		
+		let originalXPos = character.posX;
+		let originalYPos = character.posY;  
+		
+		character.$el.style.background = `url(${character.rightPic})`;
+		character.$el.style.backgroundSize = 'contain';
+
+		character.posX = 3;
+		character.posY = 2; 
+
+		
+		let characterBattlePos = convertToPix(character);
+		character.$el.style.left = characterBattlePos[0]; 
+		character.$el.style.top = characterBattlePos[1];
+
+		document.body.removeEventListener('keydown', movementKeys);
+	}
+}
+
 const moveUp = () => {
 	if(isPosInGrid(character.posX, character.posY - 1)){
-		characterDiv.style.background = `url(${character.upPic})`;
-		characterDiv.style.backgroundSize = 'contain';
+		character.$el.style.background = `url(${character.upPic})`;
+		character.$el.style.backgroundSize = 'contain';
+		
 		character.posY -= 1;
 		let newCharacterPos = convertToPix(character);
-		characterDiv.style.top = newCharacterPos[1];
+		character.$el.style.top = newCharacterPos[1];
 		
+		battleMode();
 	}
 }
 const moveDown = () => {
 	if(isPosInGrid(character.posX, character.posY + 1)){
-		characterDiv.style.background = `url(${character.downPic})`;
-		characterDiv.style.backgroundSize = 'contain';
+		character.$el.style.background = `url(${character.downPic})`;
+		character.$el.style.backgroundSize = 'contain';
+		
 		character.posY += 1;
 		let newCharacterPos = convertToPix(character);
-		characterDiv.style.top = newCharacterPos[1];
+		character.$el.style.top = newCharacterPos[1];
 		
+		battleMode();
 	}
 }
 const moveLeft = () => {
 	if(isPosInGrid(character.posX - 1, character.posY)){
-		characterDiv.style.background = `url(${character.leftPic})`;
-		characterDiv.style.backgroundSize = 'contain';
+		character.$el.style.background = `url(${character.leftPic})`;
+		character.$el.style.backgroundSize = 'contain';
+		
 		character.posX -= 1;
 		let newCharacterPos = convertToPix(character);
-		characterDiv.style.left = newCharacterPos[0];
+		character.$el.style.left = newCharacterPos[0];
 		
+		battleMode();
 	}
 }
 const moveRight = () => {
 	if(isPosInGrid(character.posX + 1, character.posY)){
-		characterDiv.style.background = `url(${character.rightPic})`;
-		characterDiv.style.backgroundSize = 'contain';
+		character.$el.style.background = `url(${character.rightPic})`;
+		character.$el.style.backgroundSize = 'contain';
+		
 		character.posX += 1;
 		let newCharacterPos = convertToPix(character);
-		characterDiv.style.left = newCharacterPos[0];
+		character.$el.style.left = newCharacterPos[0];
 		
+		battleMode();
 	}
 }
 
-
-renderFloorTiles();
-renderPlayerCharacter(); 
-renderEnemies();
-
-document.body.addEventListener('keydown', e => {
-  const keyCode = e.keyCode;
-  if ([37, 38, 39, 40].includes(keyCode)) {
+const movementKeys = e => {
+	const keyCode = e.keyCode;
+  if ([37, 38, 39, 40, 65, 68, 39].includes(keyCode)) {
     e.preventDefault();
   }
-  // if (gameOver) return;
+
   switch (keyCode) {
   	case 38:
   	case 87:
@@ -157,5 +202,12 @@ document.body.addEventListener('keydown', e => {
       moveRight();
       break;   
   }
-});
+}
+
+
+renderFloorTiles();
+renderPlayerCharacter(); 
+renderEnemies();
+
+document.body.addEventListener('keydown', movementKeys);
 
