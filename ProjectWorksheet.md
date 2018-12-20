@@ -10,7 +10,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |---|---| ---|
 |Dec 17th| Project Description | Complete
 |Dec 17th| Wireframes / Priority Matrix / Functional Components | Complete
-|Dec 18th| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Dec 18th| Core Application Structure (HTML, CSS, etc.) | Complete
 |Dec 19th| Pseudocode / actual code | Incomplete
 |Dec 19th| Initial Clickable Model  | Incomplete
 |Dec 20th| MVP | Incomplete
@@ -84,14 +84,14 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Board Visuals | H | 2hrs| 0hrs | 0hrs |
-| Rendering Characters | H | 2hrs| 0hrs | 0hrs |
-| Landing Page | M | 3hrs| 0hrs | 0hrs |
-| Player Character Movement | H | 5hrs| 0hrs | 0hrs |
+| Board Visuals | H | 2hrs| 2hrs | 2hrs |
+| Rendering Characters | H | 2hrs| 4hrs | 2hrs |
+| Player Character Movement | H | 5hrs| 6hrs | 4hrs |
 | Battle Mode Layout | M | 3hrs| 0hrs | 0hrs |
 | Battle Functionality (key presses, timer) | H | 5hrs| 0hrs | 0hrs |
 | Normal state return after enemy defeat | H | 4hrs| 0hrs | 0hrs |
 | Win/Lose Logic | H | 3hrs| 0hrs | 0hrs |
+| Landing Page | M | 3hrs| 0hrs | 0hrs |
 | Post MVP | L | 20hrs| 0hrs | 0hrs |
 | Total | H | 47hrs| 5hrs | 0hrs |
 
