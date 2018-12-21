@@ -1,8 +1,11 @@
 # Garden of Battle
 
 ## Site Info
-website: https://pages.git.generalassemb.ly/asheber792/project-1/
-github repo: https://git.generalassemb.ly/asheber792/project-1
+Website: https://pages.git.generalassemb.ly/asheber792/project-1/
+
+Github Repo: https://git.generalassemb.ly/asheber792/project-1
+
+Project Worksheet: https://gist.git.generalassemb.ly/asheber792/ae71ae7e84f144069b8a4127dd7a02a6
 
 ## Description: 
 Garden of Battle is an RPG style fighter, players can roam around a map and encounter enemies. In order to defeat them and make it through these encounters, you must attack! You will be notified on-screen as to what to press to attack. Can you survive the Garden of Battle?
