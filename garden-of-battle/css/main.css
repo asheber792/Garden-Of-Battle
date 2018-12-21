@@ -22,7 +22,7 @@ body{
 	font-family: Goud-Ornate;
 	font-size: 34pt;
 	color: white;
-	text-shadow: 2px 2px 5px lightgrey;
+	text-shadow: 2px 2px 5px #8fdd2c;
 }
 .mode-title{
 	text-align: center; 
@@ -30,7 +30,7 @@ body{
 	font-family: Goud;
 	font-size: 24pt;
 	color: white;
-	text-shadow: 2px 2px 5px lightgrey;
+	text-shadow: 2px 2px 5px #8fdd2c;
 }
 .game-board{
 	width: 800px;

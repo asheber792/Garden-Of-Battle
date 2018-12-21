@@ -174,7 +174,7 @@ const slashAttack = pos => {
 	let slashEnemy = convertToPix(pos);
 	attack.style.left = slashEnemy[0]; 
 	attack.style.top = slashEnemy[1]; 
-	$gameBoard.append(attack);
+	$gameBoard.appendChild(attack);
 }
 
 const characterDeath = () => {
@@ -182,7 +182,7 @@ const characterDeath = () => {
 			character.$el.style.background = `url(${character.koPic})`;
 			character.$el.style.backgroundSize = 'contain';
 			$gameBoard.removeChild(attack);
-			document.body.removeEventListener('keydown', quickTimeKeyBattle);
+			document.body.removeEventListener('keydown', quickTimeKeyBattle); 
 		}, 500);
 
 		gameOver(); 
@@ -220,6 +220,7 @@ const returntoRoamMode = () => {
 	let backInPos = convertToPix(previousCharacterPos); 
 	character.$el.style.left = backInPos[0]; 
 	character.$el.style.top = backInPos[1];
+	$gameBoard.removeChild(timer);
 
 	for(const enemy of otherEnemies){
 		enemy.$el.style.display = 'block';
@@ -296,7 +297,7 @@ const battleMode = () => {
 		keyRequest.style.fontSize = '18pt'; 
 
 		timer.classList.add('timer'); 
-		timer.textContent = '3000'; 
+		timer.textContent = '2000'; 
 		timer.style.color = 'white'; 
 		timer.style.fontSize = '16pt';
 		timer.style.position = 'absolute'; 
