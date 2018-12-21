@@ -91,9 +91,10 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Battle Functionality (key presses, timer) | H | 5hrs| 14hrs | 5.5hrs |
 | Normal state return after enemy defeat | H | 4hrs| 15hrs | 1hrs |
 | Win/Lose Logic | H | 3hrs| 17hrs | 2hrs |
-| Landing Page | M | 3hrs| 0hrs | 0hrs |
-| Post MVP | L | 20hrs| 0hrs | 0hrs |
-| Total | H | 47hrs| 5hrs | 0hrs |
+| Landing Page | M | 3hrs| 21.5hrs | 4.5hrs |
+| Media Queries | M | 2hrs| 22.5hrs | 1hrs |
+| Post MVP | L | 20hrs| 22.5hrs | 0hrs |
+| Total | H | 47hrs| 22.5hrs | 22.5hrs |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
