@@ -1,8 +1,9 @@
 ### Asheber Arlain
 # Garden of Battle
 
-## Site Info
+## Site/Game Info
 Website: https://pages.git.generalassemb.ly/asheber792/project-1/garden-of-battle/
+Quicktime Video: https://youtu.be/jxe55a4hJoY
 
 ## Description: 
 Garden of Battle is an RPG style fighter, players can roam around a map and encounter enemies. In order to defeat them and make it through these encounters, you must attack! You will be notified on-screen as to what to press to attack. Can you survive the Garden of Battle?
