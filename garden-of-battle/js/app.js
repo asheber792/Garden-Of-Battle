@@ -106,7 +106,7 @@ const gameOver = () => {
 		} 
 		else{
 			clearInterval(gameOverInterval);
-			alert('This is the End.'); 
+			window.open('../index.html', '_self');
 			document.body.removeEventListener('keydown', quickTimeKeyBattle);
 			document.body.removeEventListener('keydown', movementKeys);
 		}
@@ -119,7 +119,8 @@ const checkForWin = () => {
 			location.reload(); 
 		}
 		else{
-			alert('This is the End.'); 
+			window.open('../index.html', '_self');
+			clearInterval(gameOverInterval);
 			document.body.removeEventListener('keydown', quickTimeKeyBattle);
 			document.body.removeEventListener('keydown', movementKeys);
 		}
