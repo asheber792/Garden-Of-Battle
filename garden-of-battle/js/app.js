@@ -200,7 +200,7 @@ const enemyDeath = () => {
 			document.body.removeEventListener('keydown', quickTimeKeyBattle);
 
 			if(enemy.posX == attackEnemyPos.posX && enemy.posY == attackEnemyPos.posY){
-				let blinkDeath = setInterval(() => {
+				setInterval(() => {
 					enemy.$el.classList.toggle('blink-death'); 
 				}, 500); 
 				setTimeout(() => {
