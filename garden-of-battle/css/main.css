@@ -16,6 +16,7 @@ body{
 	background: black;
 }
 
+/*landing page styles--------------------*/
 .landing-title{
 	background: url('../images/garden_of_battle_title.png');
 	background-size: contain; 
@@ -90,10 +91,6 @@ a{
 .instruc-content {
 	color: white;
 	font-family: '8BITWONDERNominal';
-    /*background: #e1e3dd;
-    margin: 15% auto; 
-    border: 1px solid #888;
-    width: 80%; */
 }
 .close{ 
 	background: gray;
@@ -107,11 +104,11 @@ a{
 	text-decoration: none; 
 	border-radius: 100%;
 }
-/*styles close button when hovered on*/
 .close:hover{
 	background: #578030;
 }
 
+/*game page styles------------------------*/
 .game-title{
 	text-align: center;
 	margin: 10px;
@@ -148,6 +145,21 @@ a{
 @media only screen 
   and (max-device-width: 736px) 
   and (orientation: landscape) { 
+  	/*landing page styles--------------------*/
+  	.start-menu-options{
+		position: relative;
+	}	
+	header{
+		margin-top: -5%;
+	}
+	.instruc{
+		overflow: auto;
+	}
+	.instruc-heading{
+		font-size: 17pt;
+	}
+
+	/*game page styles-----------------------*/
   	.game-title{
   		display: none;
   	}
@@ -157,10 +169,5 @@ a{
   	.timer{
   		padding-top: 5px;
   	}
-  	.start-menu-options{
-		position: relative;
-	}	
-	header{
-		margin-top: -5%;
-	}
+
 }

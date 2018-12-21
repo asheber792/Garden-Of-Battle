@@ -43,7 +43,6 @@ const renderFloorTiles = () => {
 	for(let i = 0; i < 40; i++){
 		const grass = document.createElement('div'); 
 		grass.style.background = `url('../images/grass_flowers.png')`;
-		//grass.style.border = `1px solid black`; //temp ?
 		$gameBoard.append(grass);
 	}
 }
@@ -201,7 +200,7 @@ const enemyDeath = () => {
 			document.body.removeEventListener('keydown', quickTimeKeyBattle);
 
 			if(enemy.posX == attackEnemyPos.posX && enemy.posY == attackEnemyPos.posY){
-				setInterval(() => {
+				let blinkDeath = setInterval(() => {
 					enemy.$el.classList.toggle('blink-death'); 
 				}, 500); 
 				setTimeout(() => {
