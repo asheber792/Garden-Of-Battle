@@ -225,7 +225,6 @@ const returntoRoamMode = () => {
 	let backInPos = convertToPix(previousCharacterPos); 
 	character.$el.style.left = backInPos[0]; 
 	character.$el.style.top = backInPos[1];
-	//$gameBoard.removeChild(timer);
 	timer.remove(); 
 	timer.textContent = '1500';
 	clearInterval(timerInterval);
