@@ -101,7 +101,11 @@ Helper functions should be generic enought that they can be reused in other appl
 
 | Function | Description | 
 | --- | :---: |  
-| Capitalize | This will capitalize the first letter in a string of text | 
+| moveUp | This will move a character/element within a grid up towards the top of the window | 
+| moveDown | This will move a character/element within a grid up towards the bottom of the window | 
+| moveLeft | This will move a character/element within a grid up towards the left of the window | 
+| moveRight | This will move a character/element within a grid up towards the right of the window | 
+| movementKeys | This allows movement of a character with the arrow keys and W,A,S,D; preventing their default functioning | 
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
@@ -110,9 +114,34 @@ Helper functions should be generic enought that they can be reused in other appl
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
+This function is called when a user has killed an enemy. Removing the enemy from the DOM, the enemies array, as well as checking for the win. 
+
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+const enemyDeath = () => {
+	setTimeout(() => {
+		for(const enemy of enemies){
+			attack.remove(); 
+			document.body.removeEventListener('keydown', quickTimeKeyBattle);
+
+			if(enemy.posX == attackEnemyPos.posX && enemy.posY == attackEnemyPos.posY){
+				setInterval(() => {
+					enemy.$el.classList.toggle('blink-death'); 
+				}, 500); 
+				setTimeout(() => {
+					enemy.$el.style.display = 'none';
+					enemies.splice(enemies.indexOf(enemy), 1);
+					returntoRoamMode(); 
+					$mode_title.textContent = 'Roam Mode';
+					keyInfoBox.removeChild(keyRequest);
+					$gameBoard.removeChild(keyInfoBox); 
+					document.body.addEventListener('keydown', movementKeys);
+					setTimeout(() => {
+						checkForWin(); 
+					}, 300);
+				}, 2000)
+			}
+		}
+	}, 800);
 }
 ```
 
@@ -122,6 +151,5 @@ function reverse(string) {
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ERROR**: app.js:34 Failed to execute 'removeChild' on 'Node'                              
+**RESOLUTION**: Found that in some instances using the .remove method on the element rather than removeChild on it's parent can return better results
