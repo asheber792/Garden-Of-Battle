@@ -124,9 +124,6 @@ Helper functions should be generic enought that they can be reused in other appl
 | moveRight | This will move a character/element within a grid up towards the right of the window | 
 | movementKeys | This allows movement of a character with the arrow keys and W,A,S,D; preventing their default functioning | 
 
-## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
-
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
