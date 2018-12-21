@@ -3,6 +3,7 @@
 
 ## Site/Game Info
 Website: https://pages.git.generalassemb.ly/asheber792/project-1/garden-of-battle/
+
 Quicktime Video: https://youtu.be/jxe55a4hJoY
 
 ## Description: 
