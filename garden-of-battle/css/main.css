@@ -42,3 +42,11 @@ body{
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	box-shadow: 10px 15px 10px #6d584a;
 }
+
+.player{
+	transition: all 0.4s linear; 
+}
+
+.blink-death{
+	display: none;
+}
