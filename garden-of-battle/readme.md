@@ -1,7 +1,7 @@
 # Garden of Battle
 
 ## Site Info
-Website: https://pages.git.generalassemb.ly/asheber792/project-1/
+Website: https://pages.git.generalassemb.ly/asheber792/project-1/garden-of-battle/
 
 Github Repo: https://git.generalassemb.ly/asheber792/project-1
 
