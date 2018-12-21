@@ -12,6 +12,7 @@ let randomKey = (Math.floor(Math.random()* 26)) + 65;
 let posXBeforeBattle = 0;
 let posYBeforeBattle = 0; 
 let otherEnemies = [];
+let timerInterval = null; 
 
 const character = {
 	posX: 0, 
@@ -95,15 +96,15 @@ const isPosInGrid = (posX, posY) => {
 }
 
 const gameOver = () => {
-	setTimeout(() => {
+	let gameOverInterval = setTimeout(() => {
 		if(confirm("You died. GAME OVER. Want to play again?")){
 			location.reload(); 
 		} 
 		else{
+			clearInterval(gameOverInterval);
 			alert('This is the End.'); 
 			document.body.removeEventListener('keydown', quickTimeKeyBattle);
 			document.body.removeEventListener('keydown', movementKeys);
-
 		}
 	}, 1000);
 }
@@ -181,7 +182,7 @@ const characterDeath = () => {
 	setTimeout(() => {
 			character.$el.style.background = `url(${character.koPic})`;
 			character.$el.style.backgroundSize = 'contain';
-			$gameBoard.removeChild(attack);
+			attack.remove();
 			document.body.removeEventListener('keydown', quickTimeKeyBattle); 
 		}, 500);
 
@@ -191,7 +192,7 @@ const characterDeath = () => {
 const enemyDeath = () => {
 	setTimeout(() => {
 		for(const enemy of enemies){
-			attack.remove();
+			attack.remove(); 
 			document.body.removeEventListener('keydown', quickTimeKeyBattle);
 
 			if(enemy.posX == attackEnemyPos.posX && enemy.posY == attackEnemyPos.posY){
@@ -221,6 +222,8 @@ const returntoRoamMode = () => {
 	character.$el.style.left = backInPos[0]; 
 	character.$el.style.top = backInPos[1];
 	$gameBoard.removeChild(timer);
+	timer.textContent = '2000';
+	clearInterval(timerInterval);
 
 	for(const enemy of otherEnemies){
 		enemy.$el.style.display = 'block';
@@ -249,7 +252,8 @@ const quickTimeKeyBattle = e => {
 
 	if(keyCode != randomKey){
 		slashAttack(attackCharacterPos);	
-		characterDeath(); 
+		characterDeath();
+		clearInterval(timerInterval);  
 	}
 	else{
 		slashAttack(attackEnemyPos);
@@ -306,11 +310,16 @@ const battleMode = () => {
 		timer.style.height = '10%';
 		timer.style.width = '25%';  
 
-		setInterval(() => {
+		timerInterval = setInterval(() => {
 			let countDown = Number(timer.textContent);
 			if(countDown != 0){
 				countDown--; 
 				timer.textContent = countDown; 
+			}
+			else{
+				clearInterval(timerInterval);
+				slashAttack(attackCharacterPos);	
+				characterDeath(); 
 			}
 		}, 1);
 
