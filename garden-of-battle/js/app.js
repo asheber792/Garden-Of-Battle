@@ -3,8 +3,8 @@ const $mode_title = document.querySelector('.mode-title');
 
 const keyInfoBox = document.createElement('div');
 const keyRequest = document.createElement('h3');
-let timer = document.createElement('h4'); 
-let attack = document.createElement('div');
+const timer = document.createElement('h4'); 
+const attack = document.createElement('div');
 
 const attackCharacterPos = {posX: 3, posY: 2};
 const attackEnemyPos = {posX: 4, posY: 2};
@@ -32,6 +32,10 @@ const enemies = [
 	{
 		posX: 5,
 		posY: 4, 
+	},
+	{
+		posX: 2,
+		posY: 3, 
 	}
 ];
 
@@ -39,7 +43,7 @@ const renderFloorTiles = () => {
 	for(let i = 0; i < 40; i++){
 		const grass = document.createElement('div'); 
 		grass.style.background = `url('../images/grass_flowers.png')`;
-		grass.style.border = `1px solid black`; //temp ?
+		//grass.style.border = `1px solid black`; //temp ?
 		$gameBoard.append(grass);
 	}
 }
@@ -200,10 +204,10 @@ const enemyDeath = () => {
 					enemy.$el.classList.toggle('blink-death'); 
 				}, 500); 
 				setTimeout(() => {
-					enemy.$el.style.display = 'none'; //enemy.$el.remove();
+					enemy.$el.style.display = 'none';
 					enemies.splice(enemies.indexOf(enemy), 1);
 					returntoRoamMode(); 
-					$mode_title.textContent = "Roam Mode";
+					$mode_title.textContent = 'Roam Mode';
 					keyInfoBox.removeChild(keyRequest);
 					$gameBoard.removeChild(keyInfoBox); 
 					document.body.addEventListener('keydown', movementKeys);
@@ -221,8 +225,9 @@ const returntoRoamMode = () => {
 	let backInPos = convertToPix(previousCharacterPos); 
 	character.$el.style.left = backInPos[0]; 
 	character.$el.style.top = backInPos[1];
-	$gameBoard.removeChild(timer);
-	timer.textContent = '2000';
+	//$gameBoard.removeChild(timer);
+	timer.remove(); 
+	timer.textContent = '1500';
 	clearInterval(timerInterval);
 
 	for(const enemy of otherEnemies){
@@ -398,7 +403,5 @@ const run = () => {
 }
 
 run();
-
-
 
 

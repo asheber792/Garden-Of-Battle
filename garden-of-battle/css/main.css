@@ -50,3 +50,17 @@ body{
 .blink-death{
 	display: none;
 }
+
+@media only screen 
+  and (max-device-width: 736px) 
+  and (orientation: landscape) { 
+  	.game-title{
+  		display: none;
+  	}
+  	.mode-title{
+  		display: none;
+  	}
+  	.timer{
+  		padding-top: 5px;
+  	}
+}
