@@ -230,15 +230,19 @@ const returntoRoamMode = () => {
 	}
 }
 
-const quickTimeKeyBattle = e => {
-	const keyCode = e.keyCode; 
-	
+const renderAttack = () => {
 	attack.classList.add('attack'); 
 	attack.style.background = `url(../images/blue_slash.gif)`;
 	attack.style.backgroundSize = 'contain';
 	attack.style.width = '100px'; 
 	attack.style.height = '100px'; 
-	attack.style.position = 'absolute'; 
+	attack.style.position = 'absolute';
+}
+
+const quickTimeKeyBattle = e => {
+	const keyCode = e.keyCode; 
+	
+	renderAttack(); 
 
 	let keyArray = []; 
 
@@ -262,6 +266,50 @@ const quickTimeKeyBattle = e => {
 
 }
 
+const renderQuickTimeBox = () => {
+	keyInfoBox.classList.add('keyInfoBox'); 
+	keyInfoBox.style.backgroundColor = '#d7be82';
+	keyInfoBox.style.opacity = "0.8";
+	keyInfoBox.style.position = 'absolute'; 
+	keyInfoBox.style.top = '1%'; 
+	keyInfoBox.style.left = '1%';
+	keyInfoBox.style.height = '10%'; 
+	keyInfoBox.style.width = '30%';
+	keyInfoBox.style.paddingTop = '3%'; 
+
+	let keyChar = String.fromCharCode(randomKey); 
+
+	keyInfoBox.classList.add('keyRequest'); 
+	keyRequest.textContent = `Press [${keyChar}] to Attack`;
+	keyRequest.style.textAlign = 'center'; 
+	keyRequest.style.fontSize = '18pt'; 
+}
+
+const renderTimer = () => {
+	timer.classList.add('timer'); 
+	timer.textContent = '1500'; 
+	timer.style.color = 'white'; 
+	timer.style.fontSize = '16pt';
+	timer.style.position = 'absolute'; 
+	timer.style.top = '-5%'; 
+	timer.style.left = '1%'; 
+	timer.style.height = '10%';
+	timer.style.width = '25%';  
+
+	timerInterval = setInterval(() => {
+		let countDown = Number(timer.textContent);
+		if(countDown != 0){
+			countDown--; 
+			timer.textContent = countDown; 
+		}
+		else{
+			clearInterval(timerInterval);
+			slashAttack(attackCharacterPos);	
+			characterDeath(); 
+		}
+	}, 1);
+}
+
 const battleMode = () => {
 	if(enemyEncounter(character.posX, character.posY)){
 		$mode_title.textContent = "Battle Mode";
@@ -283,45 +331,8 @@ const battleMode = () => {
 		document.body.removeEventListener('keydown', movementKeys);
 		document.body.addEventListener('keydown', quickTimeKeyBattle);
 
-		keyInfoBox.classList.add('keyInfoBox'); 
-		keyInfoBox.style.backgroundColor = '#d7be82';
-		keyInfoBox.style.opacity = "0.8";
-		keyInfoBox.style.position = 'absolute'; 
-		keyInfoBox.style.top = '1%'; 
-		keyInfoBox.style.left = '1%';
-		keyInfoBox.style.height = '10%'; 
-		keyInfoBox.style.width = '30%';
-		keyInfoBox.style.paddingTop = '3%'; 
-
-		let keyChar = String.fromCharCode(randomKey); 
-
-		keyInfoBox.classList.add('keyRequest'); 
-		keyRequest.textContent = `Press [${keyChar}] to Attack`;
-		keyRequest.style.textAlign = 'center'; 
-		keyRequest.style.fontSize = '18pt'; 
-
-		timer.classList.add('timer'); 
-		timer.textContent = '2000'; 
-		timer.style.color = 'white'; 
-		timer.style.fontSize = '16pt';
-		timer.style.position = 'absolute'; 
-		timer.style.top = '-5%'; 
-		timer.style.left = '1%'; 
-		timer.style.height = '10%';
-		timer.style.width = '25%';  
-
-		timerInterval = setInterval(() => {
-			let countDown = Number(timer.textContent);
-			if(countDown != 0){
-				countDown--; 
-				timer.textContent = countDown; 
-			}
-			else{
-				clearInterval(timerInterval);
-				slashAttack(attackCharacterPos);	
-				characterDeath(); 
-			}
-		}, 1);
+		renderQuickTimeBox();
+		renderTimer(); 
 
 		keyInfoBox.appendChild(keyRequest); 
 		$gameBoard.appendChild(keyInfoBox); 
@@ -378,9 +389,16 @@ const moveRight = () => {
 	}
 }
 
-renderFloorTiles();
-renderPlayerCharacter(); 
-renderEnemies();
-
 document.body.addEventListener('keydown', movementKeys);
+
+const run = () => {
+	renderFloorTiles();
+	renderPlayerCharacter(); 
+	renderEnemies();	
+}
+
+run();
+
+
+
 
