@@ -1,5 +1,5 @@
-# Asheber Arlain
 # Garden of Battle
+## Asheber Arlain
 
 ## Site Info
 Website: https://pages.git.generalassemb.ly/asheber792/project-1/garden-of-battle/
