@@ -139,11 +139,11 @@ const movementKeys = e => {
      		moveUp();
      	 	break;
     	case 40:
-   		case 65:
+   		case 83:
       		moveDown();
       		break;
     	case 37:
-   		case 83:
+   		case 65:
       		moveLeft();
      	 	break;
     	case 39:
